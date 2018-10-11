@@ -5,16 +5,15 @@ class Judul extends Component{
 	render()
 	{
 return(
-	<Text style={salon.judul}>BIODATA</Text>
+	<Text style={salon.judul}>{this.props.title}</Text>
 	)
 	}
 }
 const salon = {
 	judul: {
 		color: '#f66',
-		fontSize: 50,
+		fontSize: 30,
 		fontWeight: 'bold',
-		backgroundColor: '#000'
 	}
 }
 export default Judul;

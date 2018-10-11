@@ -1,54 +1,18 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import React, { Component } from 'react';
+import {Platform, StyleSheet, Text, View} from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import Login from './Component/Login';
+import Home from './Component/Home';
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image} from 'react-native';
-import Judul from './Components/Judul';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+const AppNavigator = StackNavigator({
+  SettingScreen: { screen: Login},
+  HomeScreen: { screen: Home}
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-      <Judul/>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>Nama  : Dhanissa Nafi'ul Lathifa</Text>
-        <Text style={styles.instructions}>No.Absen  : 12</Text>
-        <Text style={styles.instructions}>Kelas : XI RPL 1</Text>
-         <Image source={require('./nissaaaa.png')} style={{width:150, height:200}}
-        />
-      </View>
-    );
+      <AppNavigator/>
+      )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
